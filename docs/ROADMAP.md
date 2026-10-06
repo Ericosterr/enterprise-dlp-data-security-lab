@@ -8,12 +8,15 @@
 - [x] Basic tests
 
 ## Phase 2 — Discovery
-- [ ] PAN detector + Luhn validation
-- [ ] Email detector
-- [ ] IBAN detector
-- [ ] Secret detector
+- [x] PAN detector + Luhn validation
+- [x] Email detector
+- [x] IBAN detector + MOD-97 validation
+- [x] Secret detector
+- [x] File scanner
+- [x] JSON result schema
+- [x] Masked findings
+- [x] Positive and negative tests
 - [ ] Directory scanner
-- [ ] JSON result schema
 
 ## Phase 3 — DLP policy engine
 - [ ] YAML policies
