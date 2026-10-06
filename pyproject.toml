@@ -4,10 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "enterprise-dlp-data-security-lab"
-version = "0.1.0"
+version = "0.2.0"
 description = "Hands-on DLP and data security engineering lab"
 requires-python = ">=3.12"
 dependencies = []
+
+[project.scripts]
+dlp-scan = "dlp_lab.scanner.cli:main"
 
 [project.optional-dependencies]
 dev = [
