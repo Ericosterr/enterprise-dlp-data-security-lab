@@ -19,11 +19,11 @@
 - [ ] Directory scanner
 
 ## Phase 3 — DLP policy engine
-- [ ] YAML policies
-- [ ] Context model
-- [ ] Allow / Alert / Block decisions
+- [x] YAML policies
+- [x] Context model
+- [x] Allow / Alert / Block decisions
 - [ ] Decision logging
-- [ ] Policy tests
+- [x] Policy tests
 
 ## Phase 4 — SIEM
 - [ ] Event schema
