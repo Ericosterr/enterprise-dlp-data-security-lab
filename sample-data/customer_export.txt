@@ -1,0 +1,8 @@
+SYNTHETIC DATA ONLY
+
+customer_name: Alice Example
+email: alice.example@example.com
+payment_card_test_pan: 4111 1111 1111 1111
+iban_test_value: GB82 WEST 1234 5698 7654 32
+
+This file uses well-known synthetic validation examples and must never be replaced with real customer or payment data.
