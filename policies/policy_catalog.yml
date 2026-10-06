@@ -1,0 +1,51 @@
+version: 1
+
+policies:
+  - id: DLP-001
+    name: Block restricted data to unmanaged destinations
+    match:
+      classification: RESTRICTED
+      destination: [PERSONAL_CLOUD, REMOVABLE_MEDIA]
+    action: BLOCK
+    severity: CRITICAL
+
+  - id: DLP-002
+    name: Block PCI or secrets to generic external destinations
+    match:
+      finding_type: [PAN, SECRET]
+      destination: [EXTERNAL]
+    action: BLOCK
+    severity: CRITICAL
+
+  - id: DLP-003
+    name: Allow approved restricted business transfer
+    match:
+      classification: RESTRICTED
+      destination: [APPROVED_EXTERNAL]
+      business_justification: true
+    action: ALLOW
+    severity: HIGH
+
+  - id: DLP-004
+    name: Alert on large confidential external export
+    match:
+      classification: CONFIDENTIAL
+      destination: [EXTERNAL]
+      minimum_record_count: 100
+    action: ALERT
+    severity: HIGH
+
+  - id: DLP-005
+    name: Block confidential data to personal cloud
+    match:
+      classification: CONFIDENTIAL
+      destination: [PERSONAL_CLOUD]
+    action: BLOCK
+    severity: HIGH
+
+  - id: DLP-006
+    name: Allow approved internal destination
+    match:
+      destination: [INTERNAL]
+    action: ALLOW
+    severity: LOW
