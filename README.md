@@ -101,7 +101,7 @@ Files / DB / Cloud Storage
 └── .env.example
 ```
 
-## Day 1 status
+## Current status
 
 - [x] Repository architecture
 - [x] Python package skeleton
@@ -109,7 +109,7 @@ Files / DB / Cloud Storage
 - [x] Threat model
 - [x] Classification model
 - [x] Initial Docker Compose skeleton
-- [ ] Sensitive-data detectors
+- [x] Sensitive-data detectors
 - [ ] Policy evaluator
 - [ ] Elastic ingestion
 - [ ] Detection rules
@@ -139,11 +139,24 @@ Run tests:
 pytest
 ```
 
-Run the initial CLI:
+Run the scanner against the synthetic sample:
 
 ```bash
-python -m dlp_lab
+dlp-scan sample-data/customer_export.txt
 ```
+
+Or without installing the console script:
+
+```bash
+python -m dlp_lab.scanner.cli sample-data/customer_export.txt
+```
+
+Expected behaviour:
+- valid synthetic PAN candidates are validated with Luhn
+- invalid 16-digit references are ignored
+- IBAN candidates are validated with MOD-97
+- email and secret patterns are detected
+- output contains masked values only
 
 ## Security principles used
 
